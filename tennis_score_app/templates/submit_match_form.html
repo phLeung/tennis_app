@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Tennis Score Tracker</title>
+</head>
+<body>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Keep Track Of Tennis Scores</h1>
+    <p>Keep score of tennis matches!</p>
+  </div>
+  <div class="container" style="margin-top:30px">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h1>Fill out Match Details:</h1>
+      <form action="/score_pt" method="post">
+        <div class="form-group row">
+           <label for="player1_id" class="col-sm-2 col-from-label">Player 1</label>
+           <div class="col-sm-10">
+             <input type="text" class="form-control" id="player1_id" name="player1_name" required>
+            </div>
+        </div>
+        <div class="form-group row">
+              <label for="player2_id" class="col-sm-2 col-form-label">Player 2</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="player2_id" name="player2_name" required>
+              </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <div class="col-form-label col-sm-2 pt-0">Number of Sets</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sets" id="sets_3" value="3" checked>
+                <label class="form-check-label" for="sets_3">
+                  Three
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sets" id="sets_5" value="5">
+                <label class="form-check-label" for="sets_5">
+                  Five
+                </label>
+              </div>
+            </div>
+        </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <div class="row">
+            <div class="row">
+                 <div class="col-form-label col-sm-2 pt-0">Tiebreak Games</div>
+                 <div class="col-sm-10">
+                     <div class="form-check">
+                         <input class="form-check-input" type="radio" name="tiebreaker" id="tiebreak_7" value="7" checked>
+                         <label class="form-check-label" for="tiebreak_7">
+                           <!--This is also known as a 12 point tie breaker. Pretty confusing
+                             since the player needs to win 7 points by a two point margin.
+                              For example, if the set score is 6 - 6, then the player needs to win
+                               7-5, 8-6, etc-->
+                             Standard Tie Breaker
+                         </label>
+                     </div>
+                     <div class="form-check">
+                         <input class="form-check-input" type="radio" name="tiebreaker" id="tiebreak_9" value="5">
+                         <label class="form-check-label" for="tiebreak_9">
+
+                             9 Point Tie Breaker(Sudden Death: first player to reach 5 points wins)
+                         </label>
+                     </div>
+                     <div class="form-check">
+                         <input class="form-check-input" type="radio" name="tiebreaker" id="tiebreak_10" value="10">
+                         <label class="form-check-label" for="tiebreak_10">
+
+                             10 Point Tie Breaker(First to 10 by 2 point margin wins)
+                         </label>
+                     </div>
+
+
+                 </div>
+             </div>
+        </fieldset>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" id="submit_match_1" class="btn btn-primary">Begin the Match</button>
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="col-sm-2"></div>
+      </div>
+
+      <div class="jumbotron" style="margin-bottom:0">
+        <p>Made by Philip Leung</p>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>
