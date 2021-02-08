@@ -36,18 +36,18 @@ Before setting up this program on your environment, you must do the following:
 You must install the python dependencies via pip3
 To run the tests on the sqlite3 database, you must set the environment variable to the URI of sqlite
 when creating the database.
-This can be done by adding the following to the configuration file .bash_profile (OS X) or .profile (Linux).
+This can be done by adding the following to the configuration file .bash_profile (Mac OS) or .profile (Linux).
 For example, in the configuration file for .bash_profile (OS X) or .profile for (Linux) you should the
 following line:
 export TENNIS_URI="sqlite:///tennis_scores.sqlite3"
 Once you do that, save and exit the configuration file and execute with the following command:
-source ~/.bash_profile (OS) or
+source ~/.bash_profile (Mac OS) or
 source ~/.profile (Linux)
 
 With the setup of the sqlite database completed, you must configure the environment variables for the
 flask framework before starting the application.
 go to the file path of the directory for application:
-~/flashpoint_test/tennis_score_app/
+~/tennis_app/tennis_score_app/
 When you get to this directory set the following flask environment variables on the command line:
 export FLASK_CONFIG=config.py
 export FLASK_ENV=development
